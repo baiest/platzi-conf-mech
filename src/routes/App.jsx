@@ -7,9 +7,13 @@ import { Payment } from '../containers/Payment';
 import { Success } from '../containers/Success';
 import { NotFound } from './../containers/NotFound';
 import { Layout } from './../components/Layout';
+import { AppContext } from '../context/AppContext';
+import { useInitialState } from '../hooks/useInitialState';
 
 export const App = () => {
+  const initialState = useInitialState()
   return (
+    <AppContext.Provider value={initialState}>
     <BrowserRouter>
       <Layout>
       <Routes>
@@ -22,5 +26,6 @@ export const App = () => {
       </Routes>
       </Layout>
     </BrowserRouter>
+    </AppContext.Provider>
   );
 };
