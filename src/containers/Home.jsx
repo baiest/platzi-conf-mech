@@ -1,5 +1,7 @@
 import React from 'react';
 //import '../styles/components/Home.css'
+import { Products } from '../components/Products';
+import initialState from '../initialState';
 export const Home = () => {
-  return <h2>Home</h2>;
+  return <Products products={initialState.products} />;
 };
