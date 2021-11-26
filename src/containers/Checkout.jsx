@@ -1,7 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import '../styles/components/Checkout.css'
 export const Checkout = () => {
-  return (
-    <h2>Checkout</h2>
-  )
-}
+  return <h2>Checkout</h2>;
+};

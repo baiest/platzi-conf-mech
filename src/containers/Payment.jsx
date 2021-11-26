@@ -1,7 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import '../styles/components/Payment.css'
 export const Payment = () => {
-  return (
-    <h2>Payment</h2>
-  )
-}
+  return <h2>Payment</h2>;
+};

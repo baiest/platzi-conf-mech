@@ -1,5 +1,5 @@
 import React from 'react';
-const hola = 'hola'
+const hola = 'hola';
 import '../styles/components/App.css';
 
 export const App = () => {
