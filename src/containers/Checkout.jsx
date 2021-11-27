@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../context/AppContext'
+import { Helmet } from 'react-helmet';
 import '../styles/components/Checkout.css'
 export const Checkout = () => {
   const { state, removeFromCart} = React.useContext(AppContext)
@@ -16,8 +17,11 @@ export const Checkout = () => {
     return sum
   }
 
-  return (
+  return ( <React.Fragment>
     <div className="Checkout">
+      <Helmet>
+        <title>Lista de pedidos - Platzi Conf Merch</title>
+      </Helmet>
       <section className="Checkout-content">
         <h3>{cart.length > 0 ? 'Lista de pedidos:' : 'Sin pedidos'}</h3>
         {cart.map(item => (
@@ -31,7 +35,7 @@ export const Checkout = () => {
         ))}
       </section>
       {cart.length > 0 && (
-      <aside className="Checkout-sidebar">
+        <aside className="Checkout-sidebar">
           <h3>Precio Total: ${handleSumTotal()}</h3>
         <Link to='/checkout/information'>
         <button type="button">
@@ -40,5 +44,6 @@ export const Checkout = () => {
         </Link>
       </aside>)}
     </div>
+    </React.Fragment>
   );
 };
